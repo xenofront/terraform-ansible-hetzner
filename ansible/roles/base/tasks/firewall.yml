@@ -1,0 +1,29 @@
+- name: configue firewall
+  become: true
+  block:
+    - name: ensure ufw is there
+      ansible.builtin.package:
+        name:
+          - ufw
+        state: present
+
+    - name: allow outgoing
+      ufw:
+        default: allow
+        direction: outgoing
+
+    - name: disallow incoming
+      ufw:
+        default: deny
+        direction: incoming
+
+    - name: grant ssh access
+      ufw:
+        rule: limit
+        direction: in
+        port: 1821
+        proto: tcp
+
+    - name: enable firewall
+      ufw:
+        state: enabled

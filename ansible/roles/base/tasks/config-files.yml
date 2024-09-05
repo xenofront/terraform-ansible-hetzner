@@ -1,0 +1,16 @@
+- name: ensure .bashrc is in place
+  become_user: "{{ main_user }}"
+  ansible.builtin.copy:
+    src: .bashrc
+    dest: "{{ ansible_env.HOME }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0640
+
+- name: ensure .vimrc is in place
+  become_user: "{{ main_user }}"
+  ansible.builtin.copy:
+    src: .vimrc
+    dest: "{{ ansible_env.HOME }}"
+    backup: yes
+    mode: 0640

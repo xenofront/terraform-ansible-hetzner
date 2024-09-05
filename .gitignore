@@ -1,0 +1,15 @@
+.vscode
+
+terraform/.terraform
+terraform/.terraform.lock.hcl
+terraform/.terraform.tfstate.lock.info
+terraform/secrets.auto.tfvars
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+
+ansible/inventory.yml
+ansible/ansible.cfg
+ansible/host_vars
+
+ssh-keys/*
+!ssh-keys/.gitkeep

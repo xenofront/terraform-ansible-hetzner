@@ -1,0 +1,4 @@
+- name: ensure Europe/Athens timezone is set
+  become: true
+  timezone:
+    name: "Europe/Athens"

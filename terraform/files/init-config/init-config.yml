@@ -1,0 +1,25 @@
+#cloud-config
+system_info:
+  default_user:
+    name: ${user_name}
+    groups: sudo, ssh-users
+    shell: /bin/bash
+    lock_passwd: true
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+
+users:
+  - default
+
+disable_root: true
+ssh_pwauth: false
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/init.conf
+    content: |
+      Port ${ssh_port}
+      PermitRootLogin no
+      PasswordAuthentication no
+      AllowGroups ssh-users
+
+# runcmd:
+#   - reboot

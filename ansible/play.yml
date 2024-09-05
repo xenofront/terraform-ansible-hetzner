@@ -1,0 +1,19 @@
+- hosts: all
+  become: true
+  pre_tasks:
+    - name: ensure packages are up to date
+      ansible.builtin.package:
+        upgrade: dist
+        update_cache: true
+
+    - name: ensure the presence of required system packages
+      ansible.builtin.package:
+        name:
+          - git
+          - jq
+        state: present
+
+- hosts: all
+  roles:
+    - base
+    - soft
