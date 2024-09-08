@@ -15,9 +15,9 @@ Ensure the following are installed on your local machine:
 
 1. Navigate to the terraform directory and copy the example variables file:
     ```bash
-    cp terraform/terraform.auto.tfvars.example terraform/terraform.auto.tfvars
+    cp terraform/secrets.auto.tfvars.example terraform/secrets.auto.tfvars
     ```
-2. Open the `terraform.auto.tfvars` file and input the required information such as hcloud_token, SSH keys, etc.
+2. Open the `secrets.auto.tfvars` file and input the required information such as hcloud_token, SSH keys, etc.
 
 ### Step 2: Add SSH Keys
 
