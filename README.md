@@ -38,7 +38,7 @@ To spin up a server on Hetzner, follow these steps:
 
 2. Run the Docker container:
     ```bash
-    docker run -d --name terraform-ansible-container terraform-ansible
+    docker run --rm -it -v $(pwd):/app --name terraform-ansible-container terraform-ansible
     ```
 
 3. Access the container:
@@ -46,7 +46,12 @@ To spin up a server on Hetzner, follow these steps:
     docker exec -it terraform-ansible-container /bin/bash
     ```
 
-4. Run the Terraform apply command:
+4. If its the first time you are accessing the container you should run the following:
+    ```bash
+    cd app/terrafrom && terraform init
+    ```
+
+5. Run the Terraform apply command:
     - You can use an alias to apply Terraform from anywhere:
     ```bash
     apply
@@ -70,6 +75,20 @@ After the server is provisioned, you can use Ansible to configure additional set
     ansible-playbook play.yml
     ```
     This will apply the configuration defined in the Ansible roles to the server.
+
+## Access the server from container
+
+To access the remote server, you need to execute the following commands.
+
+1. Start the ssh-agent
+    ```bash
+    eval `ssh-agent -s`
+    ```
+
+2. Add SSH Keys to the Agent
+    ```bash
+    ssh-add ~/.ssh/the name of you ssh key
+    ```
 
 ## Conclusion
 
