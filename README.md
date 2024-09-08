@@ -78,7 +78,7 @@ After the server is provisioned, you can use Ansible to configure additional set
 
 ## Access the server from container
 
-To access the remote server, you need to execute the following commands.
+To access the remote server from the container, you need to execute the following commands.
 
 1. Start the ssh-agent
     ```bash
