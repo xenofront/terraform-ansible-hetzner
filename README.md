@@ -40,18 +40,13 @@ To spin up a server on Hetzner, follow these steps:
     ```bash
     docker run --rm -it -v $(pwd):/app --name terraform-ansible-container terraform-ansible
     ```
-
-3. Access the container:
-    ```bash
-    docker exec -it terraform-ansible-container /bin/bash
-    ```
-
-4. If its the first time you are accessing the container you should run the following:
+    
+3. If its the first time you are accessing the container you should run the following:
     ```bash
     cd app/terrafrom && terraform init
     ```
 
-5. Run the Terraform apply command:
+4. Run the Terraform apply command:
     - You can use an alias to apply Terraform from anywhere:
     ```bash
     apply
