@@ -43,7 +43,7 @@ To spin up a server on Hetzner, follow these steps:
     
 3. If its the first time you are accessing the container you should run the following:
     ```bash
-    cd app/terrafrom && terraform init
+    cd /app/terrafrom && terraform init
     ```
 
 4. Run the Terraform apply command:
