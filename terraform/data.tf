@@ -8,8 +8,7 @@ data "cloudinit_config" "init" {
 
     content = templatefile("files/init-config/init-config.yml", {
       ssh_port         = var.ssh_port,
-      user_name        = var.user_name,
-      additional_users = var.additional_users
+      user_name        = var.user_name
     })
   }
 }

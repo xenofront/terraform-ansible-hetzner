@@ -39,11 +39,3 @@ variable "public_key_path" {
 variable "private_key_path" {
   type = string
 }
-
-variable "additional_users" {
-  type = list(object({
-    name           = string
-    ssh_public_key = string
-    groups         = string
-  }))
-}
